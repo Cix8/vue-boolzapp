@@ -2,6 +2,7 @@ const app = new Vue(
     {
         el: '#root',
         data: {
+            timeout: null,
             newMessage: '',
             currentChat: 0,
             contacts: [
@@ -204,6 +205,7 @@ const app = new Vue(
         },
         methods: {
             sendNewMessage: function(i) {
+                clearInterval(this.timeout);
                 if (this.newMessage.trim() !== '') {
                     const newMex = {
                         date: this.currentDate,
@@ -213,6 +215,15 @@ const app = new Vue(
                     this.contacts[i].messages.push(newMex);
                 }
                 this.newMessage = '';
+                this.timeout = setTimeout(this.answerGenerator, 1000)
+            },
+            answerGenerator: function() {
+                const newAnswer = {
+                    date: this.currentDate,
+                    message: 'ok',
+                    status: 'received'
+                }
+                this.contacts[this.currentChat].messages.push(newAnswer);
             }
         }
     }
