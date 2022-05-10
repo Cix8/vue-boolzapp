@@ -2,6 +2,7 @@ const app = new Vue(
     {
         el: '#root',
         data: {
+            newMessage: '',
             currentChat: 0,
             contacts: [
                 {
@@ -181,6 +182,39 @@ const app = new Vue(
                 });
                 console.log(timeArray);
                 return timeArray
+            },
+            currentDate: function() {
+                const date = new Date();
+                let month = date.getMonth().toString();
+                if (month.length < 2) {
+                    month = '0';
+                    month += (parseInt(date.getMonth()) + 1).toString();
+                } else {
+                    month = (parseInt(date.getMonth()) + 1).toString();
+                }
+                let day = date.getDay().toString();
+                if (day.length < 2) {
+                    day = '0';
+                    day += (parseInt(date.getDay()) + 1).toString();
+                } else {
+                    day = (parseInt(date.getDay()) + 1).toString();
+                }
+                let year = date.getFullYear();
+                const reducedDate = day+'/'+month+'/'+year+' '+date.toString().split(' ')[4].slice(0,5);
+                return reducedDate;
+            }
+        },
+        methods: {
+            sendNewMessage: function(i) {
+                if (this.newMessage.trim() !== '') {
+                    const newMex = {
+                        date: this.currentDate,
+                        message: this.newMessage,
+                        status: 'sent'
+                    }
+                    this.contacts[i].messages.push(newMex);
+                }
+                this.newMessage = '';
             }
         }
     }
