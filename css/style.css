@@ -199,6 +199,7 @@ main {
     display: flex;
     position: relative;
     padding: .3rem 1rem;
+    cursor: pointer;
 }
 
 .contacts .contact-avatar {
