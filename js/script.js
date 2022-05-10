@@ -2,7 +2,6 @@ const app = new Vue(
     {
         el: '#root',
         data: {
-            test: 'Hello World',
             contacts: [
                 {
                     name: 'Michele',

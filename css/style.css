@@ -5,7 +5,50 @@
     box-sizing: border-box;
 }
 
+/* COMMON */
 html {
     font-family: 'Lato', sans-serif;
     font-family: 'Montserrat', sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+/* UTILITY */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.float-l {
+    float: left;
+}
+
+/* MAIN-APP */
+main {
+    background-color: #d8dbd6;
+    width: 100%;
+    height: 100vh;
+    padding: 2% 0;
+}
+
+.general-container {
+    width: 80%;
+    /* TEST */ height: 100%;
+    margin: 0 auto;
+    background-color: red;
+}
+
+.contacts-container {
+    width: 40%;
+    /* TEST */ height: 100%;
+    background-color: blue;
+}
+
+.messages-container {
+    width: 60%;
+    /* TEST */ height: 100%;
+    background-color: orange;
 }
