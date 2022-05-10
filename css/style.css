@@ -125,6 +125,7 @@ main {
 .notifications-container {
     display: flex;
     align-items: center;
+    height: 60px;
     padding: 1rem;
     background-color: #8edafc;
 }
@@ -159,6 +160,10 @@ main {
     padding: .5rem .5rem;
 }
 
+.search-container {
+    height: 40px;
+}
+
 .search-container .icon-container,
 .input-message .icon-container {
     padding: .3rem 1rem;
@@ -183,6 +188,11 @@ main {
 
 .search-container .search-input:focus-visible {
     outline: 3px solid #8edafc;
+}
+
+.contacts {
+    height: calc(100% - 160px);
+    overflow-y: auto;
 }
 
 .contacts li {
@@ -256,6 +266,7 @@ main {
 
 .chat-container {
     padding: 3rem 4rem;
+    overflow-y: scroll;
 }
 
 .chat-container li {
