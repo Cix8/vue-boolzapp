@@ -56,39 +56,48 @@ main {
     background-color: orange;
 }
 
-.user-header {
+.user-header,
+.contact-header {
     display: flex;
-    background-color: #eaeaea;
     align-items: center;
+    height: 60px;
     padding: .5rem;
+    background-color: #eaeaea;
 }
 
-.user-header .user-image {
+.user-header .user-image,
+.contact-header .contact-image {
     width: 40px;
 }
 
-.user-image img {
+.user-image img,
+.contact-image img {
     border-radius: 50%;
 }
 
-.user-data {
+.user-data,
+.contact-data {
     flex-grow: 1;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 0 1rem 0 .5rem;
 }
 
-.user-data .user-name {
+.user-data .user-name,
+.contact-data .contact-name {
     font-weight: 500;
 }
 
-.user-data .icons-container {
+.user-data .icons-container,
+.contact-data .icons-container {
     display: flex;
     color: #b1b1b1;
     font-size: 1.2rem;
 }
 
-.user-data .icons-container li:not(li:first-child) {
+.user-data .icons-container li:not(li:first-child),
+.contact-data .icons-container li:not(li:first-child) {
     margin-left: 1rem;
 }
 
@@ -122,13 +131,15 @@ main {
     font-size: .7rem;
 }
 
-.search-container {
+.search-container,
+.input-message {
     display: flex;
     align-items: center;
     padding: .5rem .5rem;
 }
 
-.search-container .icon-container {
+.search-container .icon-container,
+.input-message .icon-container {
     padding: .3rem 1rem;
     border-radius: 20px;
     color: #b1b1b1;
@@ -172,7 +183,8 @@ main {
     font-weight: 500;
 }
 
-.contacts .text p {
+.contacts .text p,
+.contact-data .contact-name p {
     font-size: .8rem;
     color: #b1b1b1;
 }
@@ -183,4 +195,40 @@ main {
     right: .7rem;
     font-size: .7rem;
     color: #b1b1b1;
+}
+
+.contact-header {
+    border-left: 2px solid lightgrey;
+}
+
+.messages-container .chat-container {
+    height: calc(100% - 120px);
+    background-image: url('../img/mine.jpg');
+}
+
+.messages-container .input-message {
+    height: 60px;
+    padding: 0 2rem;
+    background-color: #eaeaea;
+}
+
+.input-message .icon-container {
+    font-size: 1.3rem;
+    color: #6b7376;
+}
+
+.input-message .input-container {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.input-message .new-message {
+    width: 90%;
+    padding: .5rem 1rem;
+    border: 0;
+    border-radius: 5px;
+}
+
+.input-container .new-message:focus-visible {
+    outline: 3px solid yellowgreen;
 }
