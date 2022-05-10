@@ -66,14 +66,18 @@
                         </div>
                     </div>
                     <ul class="contacts">
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
+                        <li v-for="element in contacts">
+                            <div class="contact-avatar">
+                                <img :src="'img/avatar'+ element.avatar + '.jpg'" alt="">
+                            </div>
+                            <div class="text">
+                                <span>{{ element.name }}</span>
+                                <p>Utimo messaggio inviato</p>
+                            </div>
+                            <div class="time">
+                                <span>12:00</span>
+                            </div>
+                        </li>
                     </ul>
                 </div>
                 <div class="messages-container float-l"></div>

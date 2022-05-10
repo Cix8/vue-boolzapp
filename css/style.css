@@ -35,20 +35,19 @@ main {
     background-color: #d8dbd6;
     width: 100%;
     height: 100vh;
-    padding: 2% 0;
+    padding: 1% 0;
 }
 
 .general-container {
     width: 80%;
     /* TEST */ height: 100%;
     margin: 0 auto;
-    background-color: red;
+    background-color: #ffffff;
 }
 
 .contacts-container {
     width: 40%;
-    /* TEST */ height: 100%;
-    background-color: blue;
+    height: 100%;
 }
 
 .messages-container {
@@ -65,7 +64,7 @@ main {
 }
 
 .user-header .user-image {
-    width: 50px;
+    width: 40px;
 }
 
 .user-image img {
@@ -127,12 +126,12 @@ main {
     display: flex;
     align-items: center;
     padding: .5rem .5rem;
-    background-color: #ffffff;
 }
 
 .search-container .icon-container {
     padding: .3rem 1rem;
     border-radius: 20px;
+    color: #b1b1b1;
     background-color: whitesmoke;
     box-shadow: 2px 2px lightgrey;
 }
@@ -152,4 +151,36 @@ main {
 
 .search-container .search-input:focus-visible {
     outline: 3px solid #8edafc;
+}
+
+.contacts li {
+    display: flex;
+    position: relative;
+    padding: .3rem 1rem;
+}
+
+.contacts .contact-avatar {
+    width: 50px;
+    margin-right: .5rem;
+}
+
+.contact-avatar img {
+    border-radius: 50%;
+}
+
+.contacts .text span {
+    font-weight: 500;
+}
+
+.contacts .text p {
+    font-size: .8rem;
+    color: #b1b1b1;
+}
+
+.contacts .time {
+    position: absolute;
+    top: .3rem;
+    right: .7rem;
+    font-size: .7rem;
+    color: #b1b1b1;
 }
