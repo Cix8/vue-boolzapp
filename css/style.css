@@ -19,6 +19,10 @@ img {
     width: 100%;
 }
 
+i {
+    cursor: pointer;
+}
+
 /* UTILITY */
 .clearfix::after {
     content: "";
