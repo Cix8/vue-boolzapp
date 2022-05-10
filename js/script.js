@@ -195,7 +195,7 @@ const app = new Vue(
                 let day = date.getDate().toString();
                 if (day.length < 2) {
                     day = '0';
-                    day += date.getDate();
+                    day += date.getDate().toString();
                 }
                 let year = date.getFullYear();
                 const reducedDate = day+'/'+month+'/'+year+' '+date.toString().split(' ')[4].slice(0,5);
