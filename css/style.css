@@ -15,6 +15,10 @@ ul {
     list-style: none;
 }
 
+img {
+    width: 100%;
+}
+
 /* UTILITY */
 .clearfix::after {
     content: "";
@@ -51,4 +55,40 @@ main {
     width: 60%;
     /* TEST */ height: 100%;
     background-color: orange;
+}
+
+.user-header {
+    display: flex;
+    background-color: #eaeaea;
+    align-items: center;
+    padding: .5rem;
+}
+
+.user-header .user-image {
+    width: 50px;
+}
+
+.user-image img {
+    border-radius: 50%;
+}
+
+.user-data {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem 0 .5rem;
+}
+
+.user-data .user-name {
+    font-weight: bold;
+}
+
+.user-data .icons-container {
+    display: flex;
+    color: grey;
+    font-size: 1.2rem;
+}
+
+.icons-container li:not(li:first-child) {
+    margin-left: 1rem;
 }
