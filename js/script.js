@@ -165,6 +165,19 @@ const app = new Vue(
                     ],
                 }
             ]
+        },
+        computed: {
+            timeReducedModeArray: function() {
+                const timeArray = [];
+                this.contacts.forEach(element => {
+                    const thisMessages = element.messages;
+                    thisMessages.forEach(item => {
+                        const thisReducedElement = item.date.split(' ')[1].slice(0,5);
+                        timeArray.push(thisReducedElement);
+                    })
+                });
+                return timeArray
+            }
         }
     }
 )

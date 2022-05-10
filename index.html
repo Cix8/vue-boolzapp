@@ -105,8 +105,15 @@
                     </div>
                     <div class="chat-container">
                         <ul>
-                            <li v-for="item in contacts[0].messages" :class="item.status == 'sent' ? 'sent-message' : 'received-message'">
-                                <span :class="item.status == 'sent' ? 'sent' : 'received'">{{ item.message }}</span>
+                            <li v-for="(item, index) in contacts[0].messages" :class="item.status == 'sent' ? 'sent-message' : 'received-message'">
+                                <span :class="item.status == 'sent' ? 'sent' : 'received'">
+                                    <div class="text">
+                                        {{ item.message }}
+                                    </div>
+                                    <div class="time">
+                                        <span>{{ timeReducedModeArray[index] }}</span>
+                                    </div>
+                                </span>
                             </li>
                         </ul>
                     </div>

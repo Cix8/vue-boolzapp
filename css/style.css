@@ -260,9 +260,18 @@ main {
     font-weight: 500;
 }
 
-.chat-container li span {
+.chat-container li > span {
+    position: relative;
     min-width: 250px;
     display: inline-block;
     padding: .8rem 1rem 1rem 1rem;
     border-radius: 10px;
+}
+
+.chat-container .time {
+    position: absolute;
+    bottom: 3px;
+    right: 5px;
+    font-size: .7rem;
+    color: #b1b1b1;
 }
