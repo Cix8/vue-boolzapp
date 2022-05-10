@@ -51,6 +51,10 @@ i {
     background-color: #ffffff;
 }
 
+.d-none {
+    display: none!important;
+}
+
 /* MAIN-APP */
 main {
     width: 100%;

@@ -4,6 +4,7 @@ const app = new Vue(
         data: {
             timeout: null,
             newMessage: '',
+            newSearch: '',
             currentChat: 0,
             contacts: [
                 {
@@ -201,6 +202,22 @@ const app = new Vue(
                 let year = date.getFullYear();
                 const reducedDate = day+'/'+month+'/'+year+' '+date.toString().split(' ')[4].slice(0,5);
                 return reducedDate;
+            },
+            thisClasses: function() {
+                let generalArray = [];
+                this.contacts.forEach((element, index) => {
+                    let nestedArray = [];
+                    if (index == this.currentChat) {
+                        nestedArray.push('active');
+                    }
+
+                    if (!element.visible) {
+                        nestedArray.push('d-none');
+                    }
+
+                    generalArray.push(nestedArray);
+                })
+                return generalArray
             }
         },
         methods: {
@@ -224,6 +241,22 @@ const app = new Vue(
                     status: 'received'
                 }
                 this.contacts[this.currentChat].messages.push(newAnswer);
+            },
+            filterContacts: function() {
+                if (this.newSearch.trim() !== '') {
+                    this.contacts.forEach(element => {
+                        if (element.name.toLowerCase().includes(this.newSearch.toLowerCase())) {
+                            element.visible = true;
+                        } else {
+                            element.visible = false;
+                        }
+                    })
+                } else {
+                    this.contacts.forEach(element => {
+                        element.visible = true;
+                    })
+                }
+                this.newSearch = '';
             }
         }
     }
