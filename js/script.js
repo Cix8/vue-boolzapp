@@ -188,16 +188,14 @@ const app = new Vue(
                 let month = date.getMonth().toString();
                 if (month.length < 2) {
                     month = '0';
-                    month += (parseInt(date.getMonth()) + 1).toString();
+                    month += (date.getMonth() + 1).toString();
                 } else {
-                    month = (parseInt(date.getMonth()) + 1).toString();
+                    month = (date.getMonth() + 1).toString();
                 }
-                let day = date.getDay().toString();
+                let day = date.getDate().toString();
                 if (day.length < 2) {
                     day = '0';
-                    day += (parseInt(date.getDay()) + 1).toString();
-                } else {
-                    day = (parseInt(date.getDay()) + 1).toString();
+                    day += date.getDate();
                 }
                 let year = date.getFullYear();
                 const reducedDate = day+'/'+month+'/'+year+' '+date.toString().split(' ')[4].slice(0,5);
