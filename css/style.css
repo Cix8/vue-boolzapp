@@ -80,15 +80,76 @@ main {
 }
 
 .user-data .user-name {
-    font-weight: bold;
+    font-weight: 500;
 }
 
 .user-data .icons-container {
     display: flex;
-    color: grey;
+    color: #b1b1b1;
     font-size: 1.2rem;
 }
 
-.icons-container li:not(li:first-child) {
+.user-data .icons-container li:not(li:first-child) {
     margin-left: 1rem;
+}
+
+.notifications-container {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background-color: #8edafc;
+}
+
+.notifications-container .icon-container {
+    font-size: 1.2rem;
+    padding: .5rem;
+    border-radius: 50%;
+    color: #8edafc;
+    background-color: white;
+}
+
+.notifications-container .text {
+    display: flex;
+    flex-direction: column;
+    padding-left: .5rem;
+}
+
+.notifications-container .text span {
+    font-size: .9rem;
+    font-weight: 500;
+}
+
+.notifications-container .text a {
+    font-size: .7rem;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    padding: .5rem .5rem;
+    background-color: #ffffff;
+}
+
+.search-container .icon-container {
+    padding: .3rem 1rem;
+    border-radius: 20px;
+    background-color: whitesmoke;
+    box-shadow: 2px 2px lightgrey;
+}
+
+.search-container .input-container {
+    flex-grow: 1;
+}
+
+.search-container .search-input {
+    display: inline-block;
+    width: 90%;
+    margin-left: .5rem;
+    padding: .3rem .5rem;
+    border: 0;
+    border-radius: 20px;
+}
+
+.search-container .search-input:focus-visible {
+    outline: 3px solid #8edafc;
 }
