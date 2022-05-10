@@ -34,6 +34,10 @@ i {
     float: left;
 }
 
+.active {
+    background-color: #e9ebeb;
+}
+
 .sent-message {
     text-align: right;
 }
