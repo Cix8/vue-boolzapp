@@ -2,6 +2,7 @@ const app = new Vue(
     {
         el: '#root',
         data: {
+            currentChat: 0,
             contacts: [
                 {
                     name: 'Michele',
@@ -170,12 +171,15 @@ const app = new Vue(
             timeReducedModeArray: function() {
                 const timeArray = [];
                 this.contacts.forEach(element => {
+                    const thisTime = [];
                     const thisMessages = element.messages;
                     thisMessages.forEach(item => {
                         const thisReducedElement = item.date.split(' ')[1].slice(0,5);
-                        timeArray.push(thisReducedElement);
+                        thisTime.push(thisReducedElement);
                     })
+                    timeArray.push(thisTime);
                 });
+                console.log(timeArray);
                 return timeArray
             }
         }

@@ -66,9 +66,9 @@
                         </div>
                     </div>
                     <ul class="contacts">
-                        <li v-for="(element, index) in contacts" :class="{active: index == 0}">
+                        <li v-for="(element, index) in contacts" :class="{active: index == currentChat}" @click="currentChat = index">
                             <div class="contact-avatar">
-                                <img :src="'img/avatar'+ element.avatar + '.jpg'" alt="">
+                                <img :src="'img/avatar'+ element.avatar + '.jpg'" :alt="element.name">
                             </div>
                             <div class="text">
                                 <span>{{ element.name }}</span>
@@ -83,11 +83,11 @@
                 <div class="messages-container float-l">
                     <div class="contact-header">
                         <div class="contact-image">
-                            <img :src="'img/avatar' + contacts[0].avatar + '.jpg'" alt="">
+                            <img :src="'img/avatar' + contacts[currentChat].avatar + '.jpg'" :alt="contacts[currentChat].name">
                         </div>
                         <div class="contact-data">
                             <div class="contact-name">
-                                <span>{{ contacts[0].name }}</span>
+                                <span>{{ contacts[currentChat].name }}</span>
                                 <p>Ultimo accesso oggi alle 12:00</p>
                             </div>
                             <ul class="icons-container">
@@ -105,13 +105,13 @@
                     </div>
                     <div class="chat-container">
                         <ul>
-                            <li v-for="(item, index) in contacts[0].messages" :class="item.status == 'sent' ? 'sent-message' : 'received-message'">
+                            <li v-for="(item, index) in contacts[currentChat].messages" :class="item.status == 'sent' ? 'sent-message' : 'received-message'">
                                 <span :class="item.status == 'sent' ? 'sent' : 'received'">
                                     <div class="text">
                                         {{ item.message }}
                                     </div>
                                     <div class="time">
-                                        <span>{{ timeReducedModeArray[index] }}</span>
+                                        <span>{{ timeReducedModeArray[currentChat][index] }}</span>
                                     </div>
                                 </span>
                             </li>
