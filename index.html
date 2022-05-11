@@ -72,10 +72,10 @@
                             </div>
                             <div class="text">
                                 <span>{{ element.name }}</span>
-                                <p>Utimo messaggio inviato</p>
+                                <p>{{ element.messages[element.messages.length - 1].message }}</p>
                             </div>
                             <div class="time">
-                                <span>12:00</span>
+                                <span>{{ timeReducedModeArray[index][timeReducedModeArray[index].length - 1] }}</span>
                             </div>
                         </li>
                     </ul>
@@ -88,7 +88,9 @@
                         <div class="contact-data">
                             <div class="contact-name">
                                 <span>{{ contacts[currentChat].name }}</span>
-                                <p>Ultimo accesso oggi alle 12:00</p>
+                                <p>Ultimo accesso oggi alle 
+                                    <span>{{ timeReducedModeArray[currentChat][timeReducedModeArray[currentChat].length - 1] }}</span>
+                                </p>
                             </div>
                             <ul class="icons-container">
                                 <li>
