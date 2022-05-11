@@ -256,7 +256,6 @@ const app = new Vue(
                         element.visible = true;
                     })
                 }
-                this.newSearch = '';
             }
         }
     }

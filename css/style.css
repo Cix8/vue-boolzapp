@@ -60,7 +60,11 @@ main {
     width: 100%;
     height: 100vh;
     padding: 1% 0;
-    background-color: #d8dbd6;
+    background: linear-gradient(
+        #009688 0vh,
+        #009688 15vh,
+        #d8dbd6 15vh,
+        #d8dbd6 100vh);
 }
 
 .general-container {
@@ -78,7 +82,6 @@ main {
 .messages-container {
     width: 60%;
     height: 100%;
-    background-color: orange;
 }
 
 .user-header,
