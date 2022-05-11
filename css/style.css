@@ -55,6 +55,10 @@ i {
     display: none!important;
 }
 
+.d-block {
+    display: block!important;
+}
+
 /* MAIN-APP */
 main {
     width: 100%;
@@ -277,7 +281,7 @@ main {
     overflow-y: scroll;
 }
 
-.chat-container li {
+.chat-container > ul > li {
     margin-bottom: 1rem;
     font-size: .8rem;
     font-weight: 500;
@@ -286,9 +290,15 @@ main {
 .chat-container li > span {
     position: relative;
     min-width: 250px;
+    max-width: 60%;
     display: inline-block;
     padding: .8rem 1rem 1rem 1rem;
     border-radius: 10px;
+    word-wrap: break-word;
+}
+
+.chat-container .text {
+    padding-right: .5rem;
 }
 
 .chat-container .time {
@@ -297,4 +307,41 @@ main {
     right: 5px;
     font-size: .7rem;
     color: #b1b1b1;
+}
+
+.chat-container .sub-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.chat-container .sub-menu_icon-container {
+    text-align: right;
+    padding: .8rem .5rem 0;
+}
+
+.chat-container .sub-menu_ul {
+    width: fit-content;
+    background-color: white;
+    padding: 1rem;
+    margin-top: .5rem;
+    margin-left: auto;
+    text-align: right;
+    border: 1px solid lightgrey;
+}
+
+.sub-menu_ul li:first-child {
+    margin-bottom: 1rem;
+}
+
+.sub-menu_ul li a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.sub-menu_ul li:hover a {
+    text-decoration: underline;
 }

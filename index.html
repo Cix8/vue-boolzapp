@@ -106,12 +106,31 @@
                     <div class="chat-container">
                         <ul>
                             <li v-for="(item, index) in contacts[currentChat].messages" :class="item.status == 'sent' ? 'sent-message' : 'received-message'">
-                                <span :class="item.status == 'sent' ? 'sent' : 'received'">
+                                <span @mouseover="item.menuIconVisible = true" :class="item.status == 'sent' ? 'sent' : 'received'">
                                     <div class="text">
-                                        {{ item.message }}
+                                        <span>{{ item.message }}</span>
                                     </div>
                                     <div class="time">
                                         <span>{{ timeReducedModeArray[currentChat][index] }}</span>
+                                    </div>
+                                    <div @mouseleave="hideThis(index)" class="sub-menu">
+                                        <div @click="item.menuVisible = true" class="sub-menu_icon-container" :class="item.menuIconVisible == true ? 'd-block' : 'd-none'">
+                                            <i class="fas fa-chevron-down"></i>
+                                        </div>
+                                        <div class="sub-menu_list-container" :class="item.menuVisible == true ? 'd-block' : 'd-none'">
+                                            <ul class="sub-menu_ul">
+                                                <li>
+                                                    <a href="">
+                                                        Info messaggio
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="">
+                                                        Cancella messaggio
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </span>
                             </li>
