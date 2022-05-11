@@ -269,7 +269,9 @@ const app = new Vue(
                     const newMex = {
                         date: this.currentDate,
                         message: this.newMessage,
-                        status: 'sent'
+                        status: 'sent',
+                        menuIconVisible: false,
+                        menuVisible: false,
                     }
                     this.contacts[i].messages.push(newMex);
                 }
@@ -280,7 +282,9 @@ const app = new Vue(
                 const newAnswer = {
                     date: this.currentDate,
                     message: 'ok',
-                    status: 'received'
+                    status: 'received',
+                    menuIconVisible: false,
+                    menuVisible: false,
                 }
                 this.contacts[this.currentChat].messages.push(newAnswer);
             },
