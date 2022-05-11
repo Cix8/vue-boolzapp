@@ -106,7 +106,7 @@
                     <div class="chat-container">
                         <ul>
                             <li v-for="(item, index) in contacts[currentChat].messages" :class="item.status == 'sent' ? 'sent-message' : 'received-message'">
-                                <span @mouseover="item.menuIconVisible = true" :class="item.status == 'sent' ? 'sent' : 'received'">
+                                <span @mouseleave="hideThis(index)" @mouseover="item.menuIconVisible = true" :class="item.status == 'sent' ? 'sent' : 'received'">
                                     <div class="text">
                                         <span>{{ item.message }}</span>
                                     </div>
@@ -120,12 +120,12 @@
                                         <div class="sub-menu_list-container" :class="item.menuVisible == true ? 'd-block' : 'd-none'">
                                             <ul class="sub-menu_ul">
                                                 <li>
-                                                    <a href="">
+                                                    <a>
                                                         Info messaggio
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="">
+                                                    <a @click="deleteMessage(index)">
                                                         Cancella messaggio
                                                     </a>
                                                 </li>

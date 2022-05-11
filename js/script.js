@@ -302,7 +302,9 @@ const app = new Vue(
             hideThis: function(index) {
                 this.contacts[this.currentChat].messages[index].menuIconVisible = false;
                 this.contacts[this.currentChat].messages[index].menuVisible = false;
-                console.log(this.contacts[this.currentChat].messages[index].menuIconVisible, this.contacts[index].messages[index].menuVisible);
+            },
+            deleteMessage: function(index) {
+                this.contacts[this.currentChat].messages.splice(index, 1);
             }
         }
     }
