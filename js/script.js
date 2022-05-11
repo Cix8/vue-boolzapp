@@ -6,6 +6,7 @@ const app = new Vue(
             newMessage: '',
             newSearch: '',
             currentChat: 0,
+            activePushNotifications: false,
             contacts: [
                 {
                     name: 'Michele',
@@ -213,19 +214,26 @@ const app = new Vue(
             ]
         },
         computed: {
-            timeReducedModeArray: function() {
-                const timeArray = [];
+            
+            /**     arrayOfMessageTimes
+            * Description: generate an array of arrays; the elements of the main-array are arrays containing the times of each message present in the contacts; the length of the main-array is always equal to the length of the array of objects present in the contacts, this allows us to use a single index to call elements referring to the same object
+            * @returns {Array of Arrays} Returns an array of arrays like the one below:
+            *                    messageTimes of first contact       messageTimes of second contact    ...
+            * timesArray = [ [messageTime,messageTime,messageTime],  [messageTime,messageTime],        ... ] 
+            */
+            arrayOfMessageTimes: function() {
+                const timesArray = [];
                 this.contacts.forEach(element => {
-                    const thisTime = [];
-                    const thisMessages = element.messages;
-                    thisMessages.forEach(item => {
-                        const thisReducedElement = item.date.split(' ')[1].slice(0,5);
-                        thisTime.push(thisReducedElement);
+                    const theseTimes = [];
+                    const theseMessages = element.messages;
+                    theseMessages.forEach(item => {
+                        const messageTime = item.date.split(' ')[1].slice(0,5);
+                        theseTimes.push(messageTime);
                     })
-                    timeArray.push(thisTime);
+                    timesArray.push(theseTimes);
                 });
-                console.log(timeArray);
-                return timeArray
+                console.log(timesArray);
+                return timesArray
             },
             currentDate: function() {
                 const date = new Date();
@@ -245,7 +253,7 @@ const app = new Vue(
                 const reducedDate = day+'/'+month+'/'+year+' '+date.toString().split(' ')[4].slice(0,5);
                 return reducedDate;
             },
-            thisClasses: function() {
+            theseClasses: function() {
                 let generalArray = [];
                 this.contacts.forEach((element, index) => {
                     let nestedArray = [];
@@ -309,6 +317,18 @@ const app = new Vue(
             },
             deleteMessage: function(index) {
                 this.contacts[this.currentChat].messages.splice(index, 1);
+            },
+            getLastElementOf: function(thisArray) {
+                return thisArray[thisArray.length - 1]
+            },
+            getCurrentElementOf: function(thisArray,thisIndex) {
+                return thisArray[this.currentChat][thisIndex]
+            },
+            getLastMessageOf: function(thisContact) {
+                return thisContact.messages[thisContact.messages.length - 1].message
+            },
+            notificationsToggle: function() {
+                this.activePushNotifications = !this.activePushNotifications;
             }
         }
     }
