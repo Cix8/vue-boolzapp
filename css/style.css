@@ -163,6 +163,7 @@ main {
     border-radius: 50%;
     color: var(--notifications-bg-color);
     background-color: var(--white-bg-color);
+    cursor: pointer;
 }
 
 .notifications-container .icon-container.bell {
