@@ -122,7 +122,7 @@
                                         <div class="sub-menu_list-container" :class="item.menuVisible == true ? 'd-block' : 'd-none'">
                                             <ul class="sub-menu_ul">
                                                 <li>
-                                                    <a @click="item.showInfo = !item.showInfo">
+                                                    <a @click="showInfoToggle(item)">
                                                         Info messaggio
                                                     </a>
                                                 </li>

@@ -361,6 +361,10 @@ const app = new Vue(
             },
             getExtendedDateDownToMinutes: function(thisDate) {
                 return thisDate.slice(0,16);
+            },
+            showInfoToggle: function(thisMessage) {
+                thisMessage.showInfo = !thisMessage.showInfo;
+                thisMessage.menuVisible = false;
             }
         }
     }
