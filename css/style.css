@@ -81,7 +81,7 @@ a {
 main {
     width: 100%;
     height: 100vh;
-    min-width: 900px;
+    min-width: 950px;
     padding: 1% 0;
     background: linear-gradient(
         var(--main-bg-color1) 0vh,
@@ -164,16 +164,14 @@ main {
 }
 
 .notifications-container .icon-container {
+    width: 40px;
+    height: 40px;
     font-size: 1.2rem;
-    padding: .5rem;
+    text-align: center;
+    padding: .5rem 0;
     border-radius: 50%;
     color: var(--notifications-bg-color);
     background-color: var(--white-bg-color);
-}
-
-.notifications-container .icon-container.bell {
-    font-size: 1.3rem;
-    padding: .4rem .7rem;
 }
 
 .notifications-container .text {
