@@ -19,6 +19,7 @@ const app = new Vue(
                             status: 'sent',
                             menuIconVisible: false,
                             menuVisible: false,
+                            showInfo: false
                         },
                         {
                             date: '10/01/2020 15:50:00',
@@ -26,6 +27,7 @@ const app = new Vue(
                             status: 'sent',
                             menuIconVisible: false,
                             menuVisible: false,
+                            showInfo: false
                         },
                         {
                             date: '10/01/2020 16:15:22',
@@ -33,6 +35,7 @@ const app = new Vue(
                             status: 'received',
                             menuIconVisible: false,
                             menuVisible: false,
+                            showInfo: false
                         }
                     ],
                 },
@@ -47,6 +50,7 @@ const app = new Vue(
                             status: 'sent',
                             menuIconVisible: false,
                             menuVisible: false,
+                            showInfo: false
                         },
                         {
                             date: '20/03/2020 16:30:55',
@@ -54,6 +58,7 @@ const app = new Vue(
                             status: 'received',
                             menuIconVisible: false,
                             menuVisible: false,
+                            showInfo: false
                         },
                         {
                             date: '20/03/2020 16:35:00',
@@ -61,6 +66,7 @@ const app = new Vue(
                             status: 'sent',
                             menuIconVisible: false,
                             menuVisible: false,
+                            showInfo: false
                         }
                     ],
                 },
@@ -75,6 +81,7 @@ const app = new Vue(
                             status: 'received',
                             menuIconVisible: false,
                             menuVisible: false,
+                            showInfo: false
                         },
                         {
                             date: '28/03/2020 10:20:10',
@@ -82,6 +89,7 @@ const app = new Vue(
                             status: 'sent',
                             menuIconVisible: false,
                             menuVisible: false,
+                            showInfo: false
                         },
                         {
                             date: '28/03/2020 16:15:22',
@@ -89,6 +97,7 @@ const app = new Vue(
                             status: 'received',
                             menuIconVisible: false,
                             menuVisible: false,
+                            showInfo: false
                         }
                     ],
                 },
@@ -103,6 +112,7 @@ const app = new Vue(
                             status: 'sent',
                             menuIconVisible: false,
                             menuVisible: false,
+                            showInfo: false
                         },
                         {
                             date: '10/01/2020 15:50:00',
@@ -110,6 +120,7 @@ const app = new Vue(
                             status: 'received',
                             menuIconVisible: false,
                             menuVisible: false,
+                            showInfo: false
                         }
                     ],
                 },
@@ -124,6 +135,7 @@ const app = new Vue(
                             status: 'sent',
                             menuIconVisible: false,
                             menuVisible: false,
+                            showInfo: false
                         },
                         {
                             date: '10/01/2020 15:50:00',
@@ -131,6 +143,7 @@ const app = new Vue(
                             status: 'received',
                             menuIconVisible: false,
                             menuVisible: false,
+                            showInfo: false
                         }
                     ],
                 },
@@ -145,6 +158,7 @@ const app = new Vue(
                             status: 'sent',
                             menuIconVisible: false,
                             menuVisible: false,
+                            showInfo: false
                         },
                         {
                             date: '10/01/2020 15:50:00',
@@ -152,6 +166,7 @@ const app = new Vue(
                             status: 'received',
                             menuIconVisible: false,
                             menuVisible: false,
+                            showInfo: false
                         },
                         {
                             date: '10/01/2020 15:51:00',
@@ -159,6 +174,7 @@ const app = new Vue(
                             status: 'sent',
                             menuIconVisible: false,
                             menuVisible: false,
+                            showInfo: false
                         }
                     ],
                 },
@@ -173,6 +189,7 @@ const app = new Vue(
                             status: 'sent',
                             menuIconVisible: false,
                             menuVisible: false,
+                            showInfo: false
                         },
                         {
                             date: '10/01/2020 15:50:00',
@@ -180,6 +197,7 @@ const app = new Vue(
                             status: 'received',
                             menuIconVisible: false,
                             menuVisible: false,
+                            showInfo: false
                         }
                     ],
                 },
@@ -194,6 +212,7 @@ const app = new Vue(
                             status: 'received',
                             menuIconVisible: false,
                             menuVisible: false,
+                            showInfo: false
                         },
                         {
                             date: '10/01/2020 15:50:00',
@@ -201,6 +220,7 @@ const app = new Vue(
                             status: 'sent',
                             menuIconVisible: false,
                             menuVisible: false,
+                            showInfo: false
                         },
                         {
                             date: '10/01/2020 15:51:00',
@@ -208,6 +228,7 @@ const app = new Vue(
                             status: 'received',
                             menuIconVisible: false,
                             menuVisible: false,
+                            showInfo: false
                         }
                     ],
                 }
@@ -235,24 +256,6 @@ const app = new Vue(
                 console.log(timesArray);
                 return timesArray
             },
-            currentDate: function() {
-                const date = new Date();
-                let month = date.getMonth().toString();
-                if (month.length < 2) {
-                    month = '0';
-                    month += (date.getMonth() + 1).toString();
-                } else {
-                    month = (date.getMonth() + 1).toString();
-                }
-                let day = date.getDate().toString();
-                if (day.length < 2) {
-                    day = '0';
-                    day += date.getDate().toString();
-                }
-                let year = date.getFullYear();
-                const reducedDate = day+'/'+month+'/'+year+' '+date.toString().split(' ')[4].slice(0,5);
-                return reducedDate;
-            },
             theseClasses: function() {
                 let generalArray = [];
                 this.contacts.forEach((element, index) => {
@@ -275,11 +278,12 @@ const app = new Vue(
                 clearInterval(this.timeout);
                 if (this.newMessage.trim() !== '') {
                     const newMex = {
-                        date: this.currentDate,
+                        date: this.currentDate(),
                         message: this.newMessage,
                         status: 'sent',
                         menuIconVisible: false,
                         menuVisible: false,
+                        showInfo: false
                     }
                     this.contacts[i].messages.push(newMex);
                 }
@@ -288,18 +292,21 @@ const app = new Vue(
             },
             answerGenerator: function() {
                 const newAnswer = {
-                    date: this.currentDate,
+                    date: this.currentDate(),
                     message: 'ok',
                     status: 'received',
                     menuIconVisible: false,
                     menuVisible: false,
+                    showInfo: false
                 }
                 this.contacts[this.currentChat].messages.push(newAnswer);
+                clearInterval(this.timeout);
             },
             filterContacts: function() {
                 if (this.newSearch.trim() !== '') {
                     this.contacts.forEach(element => {
-                        if (element.name.toLowerCase().includes(this.newSearch.toLowerCase())) {
+                        const newSearchToCheck = this.newSearch.trim().toLowerCase();
+                        if (element.name.toLowerCase().includes(newSearchToCheck)) {
                             element.visible = true;
                         } else {
                             element.visible = false;
@@ -329,6 +336,29 @@ const app = new Vue(
             },
             notificationsToggle: function() {
                 this.activePushNotifications = !this.activePushNotifications;
+            },
+            currentDate: function() {
+                const date = new Date();
+                console.log(date);
+                let month = date.getMonth().toString();
+                if (month.length < 2) {
+                    month = '0';
+                    month += (date.getMonth() + 1).toString();
+                } else {
+                    month = (date.getMonth() + 1).toString();
+                }
+                let day = date.getDate().toString();
+                if (day.length < 2) {
+                    day = '0';
+                    day += date.getDate().toString();
+                }
+                let year = date.getFullYear();
+                let hours = date.toString().split(' ')[4].slice(0,8);
+                const reducedDate = day+'/'+month+'/'+year+' '+ hours;
+                return reducedDate;
+            },
+            getExtendedDateDownToMinutes: function(thisDate) {
+                return thisDate.slice(0,16);
             }
         }
     }
