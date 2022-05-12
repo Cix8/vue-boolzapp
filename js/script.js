@@ -237,10 +237,12 @@ const app = new Vue(
         computed: {
             
             /**     arrayOfMessageTimes
-            * Description: generate an array of arrays; the elements of the main-array are arrays containing the times of each message present in the contacts; the length of the main-array is always equal to the length of the array of objects present in the contacts, this allows us to use a single index to call elements referring to the same object
+            * Description: generate an array of arrays; the elements of the main-array are arrays containing the times of each message present in contacts; the length of the main-array is always equal to the length of the array of objects present in the contacts and the length of each array in main-array is the same of each contact messages' array; this allows us to use the first index to call elements referring to the contacts' array and to use the second index to call elements referring to a specific contact's messages' array. For example: arrayOfMessageTimes[firstIndex][secondIndex] call a specific message passing by main-array with firstIndex (0 <= firstIndex < contacts.lenght) and by a specific messageTimes' array with secondIndex (0 <= secondIndex < main-array[firstIndex].length).
             * @returns {Array of Arrays} Returns an array of arrays like the one below:
+            * 
             *                    messageTimes of first contact       messageTimes of second contact    ...
             * timesArray = [ [messageTime,messageTime,messageTime],  [messageTime,messageTime],        ... ] 
+            * 
             */
             arrayOfMessageTimes: function() {
                 const timesArray = [];
