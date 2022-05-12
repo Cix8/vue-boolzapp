@@ -30,8 +30,14 @@ img {
     width: 100%;
 }
 
-i,
+/* CURSOR-POINTER_SETTINGS */
+li > i,
 a {
+    cursor: pointer;
+}
+
+.icon-container,
+.sub-menu_icon-container {
     cursor: pointer;
 }
 
@@ -163,7 +169,6 @@ main {
     border-radius: 50%;
     color: var(--notifications-bg-color);
     background-color: var(--white-bg-color);
-    cursor: pointer;
 }
 
 .notifications-container .icon-container.bell {
