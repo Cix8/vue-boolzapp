@@ -85,7 +85,6 @@ main {
 }
 
 /* MAIN-STRUCTURE-SETTINGS */
-
 .general-container {
     width: 80%;
     height: 100%;
@@ -279,7 +278,7 @@ main {
 }
 
 /* MESSAGES-SECTION */
-/* CHAT-SECTIONS */
+/* CHAT-SECTION */
 .messages-container .chat-container {
     height: calc(100% - 120px);
     background-image: url('../img/mine.jpg');
