@@ -89,7 +89,7 @@
                                 <p>{{ getLastMessageOf(element) }}</p>
                             </div>
                             <div class="time">
-                                <span>{{ getExtendedDateDownToMinutes(getLastElementOf(element.messages).date)  }}</span>
+                                <span>{{ element.messages.length < 1 ? '' : getExtendedDateDownToMinutes(getLastElementOf(element.messages).date)  }}</span>
                             </div>
                         </li>
                     </ul>

@@ -334,7 +334,11 @@ const app = new Vue(
                 return thisArray[this.currentChat][thisIndex]
             },
             getLastMessageOf: function(thisContact) {
-                return thisContact.messages[thisContact.messages.length - 1].message
+                let result = '';
+                if (thisContact.messages.length > 0) {
+                    result = thisContact.messages[thisContact.messages.length - 1].message
+                }
+                return result
             },
             notificationsToggle: function() {
                 this.activePushNotifications = !this.activePushNotifications;
