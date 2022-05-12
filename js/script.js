@@ -259,9 +259,9 @@ const app = new Vue(
                 return timesArray
             },
             theseClasses: function() {
-                let generalArray = [];
+                const generalArray = [];
                 this.contacts.forEach((element, index) => {
-                    let nestedArray = [];
+                    const nestedArray = [];
                     if (index == this.currentChat) {
                         nestedArray.push('active');
                     }
@@ -354,8 +354,8 @@ const app = new Vue(
                     day = '0';
                     day += date.getDate().toString();
                 }
-                let year = date.getFullYear();
-                let hours = date.toString().split(' ')[4].slice(0,8);
+                const year = date.getFullYear();
+                const hours = date.toString().split(' ')[4].slice(0,8);
                 const reducedDate = day+'/'+month+'/'+year+' '+ hours;
                 return reducedDate;
             },

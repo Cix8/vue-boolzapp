@@ -26,7 +26,11 @@
     <div id="root">
         <main>
             <div class="general-container clearfix">
+                
+                <!-- COL-LEFT -->
                 <div class="contacts-container float-l">
+
+                    <!-- USER-HEADER -->
                     <div class="user-header">
                         <div class="user-image">
                             <img src="img/avatar_io.jpg" alt="my-avatar">
@@ -48,6 +52,9 @@
                             </ul>
                         </div>
                     </div>
+                    <!-- /USER-HEADER -->
+
+                    <!-- NOTIFICATIONS-SECTION -->
                     <div class="notifications-container">
                         <div class="icon-container" :class="{bell: activePushNotifications == true}">
                             <i :class="activePushNotifications == true ? 'fas fa-bell' : 'fas fa-bell-slash'"></i>
@@ -57,6 +64,9 @@
                             <a @click="notificationsToggle">{{ activePushNotifications == true ? 'Disattiva notifiche desktop' : 'Attiva notifiche desktop' }}</a>
                         </div>
                     </div>
+                    <!-- /NOTIFICATIONS-SECTION -->
+
+                    <!-- SEARCH-SECTION -->
                     <div class="search-container">
                         <div class="icon-container">
                             <i class="fas fa-search"></i>
@@ -65,6 +75,9 @@
                             <input @keyup="filterContacts" v-model="newSearch" class="search-input" type="search" placeholder="Cerca o inizia una nuova chat">
                         </div>
                     </div>
+                    <!-- /SEARCH-SECTION -->
+
+                    <!-- CONTACTS-SECTION -->
                     <ul class="contacts">
                         <li v-for="(element, index) in contacts" :class="theseClasses[index]" @click="currentChat = index">
                             <div class="contact-avatar">
@@ -79,8 +92,15 @@
                             </div>
                         </li>
                     </ul>
+                    <!-- /CONTACTS-SECTION -->
+
                 </div>
+                <!-- /COL-LEFT -->
+
+                <!-- COL-RIGHT -->
                 <div class="messages-container float-l">
+                    
+                    <!-- CONTACT-HEADER -->
                     <div class="contact-header">
                         <div class="contact-image">
                             <img :src="'img/avatar' + contacts[currentChat].avatar + '.jpg'" :alt="contacts[currentChat].name">
@@ -105,6 +125,9 @@
                             </ul>
                         </div>
                     </div>
+                    <!-- /CONTACT-HEADER -->
+
+                    <!-- CHAT-SECTION -->
                     <div class="chat-container">
                         <ul>
                             <li v-for="(item, index) in contacts[currentChat].messages" :class="item.status == 'sent' ? 'sent-message' : 'received-message'">
@@ -138,6 +161,9 @@
                             </li>
                         </ul>
                     </div>
+                    <!-- /CHAT-SECTION -->
+
+                    <!-- NEW-MESSAGE-SECTION -->
                     <div class="input-message">
                         <div class="icon-container">
                             <i class="far fa-smile"></i>
@@ -149,7 +175,11 @@
                             <i class="fas fa-microphone"></i>
                         </div>
                     </div>
+                    <!-- /NEW-MESSAGE-SECTION -->
+
                 </div>
+                <!-- /COL-RIGHT -->
+
             </div>
         </main>
     </div>

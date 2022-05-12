@@ -84,6 +84,8 @@ main {
         var(--main-bg-color2) 100vh);
 }
 
+/* MAIN-STRUCTURE-SETTINGS */
+
 .general-container {
     width: 80%;
     height: 100%;
@@ -101,6 +103,7 @@ main {
     height: 100%;
 }
 
+/* HEADER-LEFT-&-HEADER-RIGHT_SETTINGS */
 .user-header,
 .contact-header {
     display: flex;
@@ -146,6 +149,7 @@ main {
     margin-left: 1rem;
 }
 
+/* NOTIFICATIONS-SECTION */
 .notifications-container {
     display: flex;
     align-items: center;
@@ -186,6 +190,7 @@ main {
     text-decoration: underline;
 }
 
+/* SEARCH-SECTION */
 .search-container,
 .input-message {
     display: flex;
@@ -223,6 +228,7 @@ main {
     outline: 3px solid var(--notifications-bg-color);
 }
 
+/* CONTACTS-SECTION */
 .contacts {
     height: calc(100% - 160px);
     overflow-y: auto;
@@ -272,36 +278,11 @@ main {
     border-left: 2px solid lightgrey;
 }
 
+/* MESSAGES-SECTION */
+/* CHAT-SECTIONS */
 .messages-container .chat-container {
     height: calc(100% - 120px);
     background-image: url('../img/mine.jpg');
-}
-
-.messages-container .input-message {
-    height: 60px;
-    padding: 0 2rem;
-    background-color: var(--header-bg-color);
-}
-
-.input-message .icon-container {
-    font-size: 1.3rem;
-    color: #6b7376;
-}
-
-.input-message .input-container {
-    flex-grow: 1;
-    text-align: center;
-}
-
-.input-message .new-message {
-    width: 90%;
-    padding: .5rem 1rem;
-    border: 0;
-    border-radius: 5px;
-}
-
-.input-container .new-message:focus-visible {
-    outline: 3px solid greenyellow;
 }
 
 .chat-container {
@@ -337,6 +318,7 @@ main {
     color: var(--icons-color);
 }
 
+/* SUB-MENU-SECTION */
 .chat-container .sub-menu {
     position: absolute;
     top: 0;
@@ -371,4 +353,32 @@ main {
 
 .sub-menu_ul li:hover a {
     text-decoration: underline;
+}
+
+/* NEW-MESSAGE-SECTION */
+.messages-container .input-message {
+    height: 60px;
+    padding: 0 2rem;
+    background-color: var(--header-bg-color);
+}
+
+.input-message .icon-container {
+    font-size: 1.3rem;
+    color: #6b7376;
+}
+
+.input-message .input-container {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.input-message .new-message {
+    width: 90%;
+    padding: .5rem 1rem;
+    border: 0;
+    border-radius: 5px;
+}
+
+.input-container .new-message:focus-visible {
+    outline: 3px solid greenyellow;
 }
