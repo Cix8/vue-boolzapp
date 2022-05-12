@@ -1,3 +1,14 @@
+:root {
+    --main-bg-color1: #009688;
+    --main-bg-color2: #d8dbd6;
+    --header-bg-color: #eaeaea;
+    --notifications-bg-color: #8edafc;
+    --icons-color: #b1b1b1;
+    --active-status-bg-color: #e9ebeb;
+    --white-bg-color: #ffffff;
+    --sent-bg-color: #d5f9ba;
+}
+
 /* RESET */
 * {
     padding: 0;
@@ -36,7 +47,7 @@ a {
 }
 
 .active {
-    background-color: #e9ebeb;
+    background-color: var(--active-status-bg-color);
 }
 
 .sent-message {
@@ -44,12 +55,12 @@ a {
 }
 
 .sent {
-    background-color: #d5f9ba;
+    background-color: var(--sent-bg-color);
     text-align: left;
 }
 
 .received {
-    background-color: #ffffff;
+    background-color: var(--white-bg-color);
 }
 
 .d-none {
@@ -64,19 +75,20 @@ a {
 main {
     width: 100%;
     height: 100vh;
+    min-width: 900px;
     padding: 1% 0;
     background: linear-gradient(
-        #009688 0vh,
-        #009688 15vh,
-        #d8dbd6 15vh,
-        #d8dbd6 100vh);
+        var(--main-bg-color1) 0vh,
+        var(--main-bg-color1) 15vh,
+        var(--main-bg-color2) 15vh,
+        var(--main-bg-color2) 100vh);
 }
 
 .general-container {
     width: 80%;
     height: 100%;
     margin: 0 auto;
-    background-color: #ffffff;
+    background-color: var(--white-bg-color);
 }
 
 .contacts-container {
@@ -95,7 +107,7 @@ main {
     align-items: center;
     height: 60px;
     padding: .5rem;
-    background-color: #eaeaea;
+    background-color: var(--header-bg-color);
 }
 
 .user-header .user-image,
@@ -125,7 +137,7 @@ main {
 .user-data .icons-container,
 .contact-data .icons-container {
     display: flex;
-    color: #b1b1b1;
+    color: var(--icons-color);
     font-size: 1.2rem;
 }
 
@@ -139,15 +151,15 @@ main {
     align-items: center;
     height: 60px;
     padding: 1rem 0 1rem 1rem;
-    background-color: #8edafc;
+    background-color: var(--notifications-bg-color);
 }
 
 .notifications-container .icon-container {
     font-size: 1.2rem;
     padding: .5rem;
     border-radius: 50%;
-    color: #8edafc;
-    background-color: white;
+    color: var(--notifications-bg-color);
+    background-color: var(--white-bg-color);
 }
 
 .notifications-container .icon-container.bell {
@@ -170,6 +182,10 @@ main {
     font-size: .7rem;
 }
 
+.notifications-container .text a:hover {
+    text-decoration: underline;
+}
+
 .search-container,
 .input-message {
     display: flex;
@@ -185,7 +201,7 @@ main {
 .input-message .icon-container {
     padding: .3rem 1rem;
     border-radius: 20px;
-    color: #b1b1b1;
+    color: var(--icons-color);
     background-color: whitesmoke;
     box-shadow: 2px 2px lightgrey;
 }
@@ -204,7 +220,7 @@ main {
 }
 
 .search-container .search-input:focus-visible {
-    outline: 3px solid #8edafc;
+    outline: 3px solid var(--notifications-bg-color);
 }
 
 .contacts {
@@ -235,7 +251,7 @@ main {
 .contacts .text p,
 .contact-data .contact-name p {
     font-size: .8rem;
-    color: #b1b1b1;
+    color: var(--icons-color);
 }
 
 .contacts .text p {
@@ -249,7 +265,7 @@ main {
     top: .3rem;
     right: .7rem;
     font-size: .7rem;
-    color: #b1b1b1;
+    color: var(--icons-color);
 }
 
 .contact-header {
@@ -264,7 +280,7 @@ main {
 .messages-container .input-message {
     height: 60px;
     padding: 0 2rem;
-    background-color: #eaeaea;
+    background-color: var(--header-bg-color);
 }
 
 .input-message .icon-container {
@@ -285,7 +301,7 @@ main {
 }
 
 .input-container .new-message:focus-visible {
-    outline: 3px solid yellowgreen;
+    outline: 3px solid greenyellow;
 }
 
 .chat-container {
@@ -318,7 +334,7 @@ main {
     bottom: 3px;
     right: 5px;
     font-size: .7rem;
-    color: #b1b1b1;
+    color: var(--icons-color);
 }
 
 .chat-container .sub-menu {
@@ -336,7 +352,7 @@ main {
 
 .chat-container .sub-menu_ul {
     width: fit-content;
-    background-color: white;
+    background-color: var(--white-bg-color);
     padding: 1rem;
     margin-top: .5rem;
     margin-left: auto;
